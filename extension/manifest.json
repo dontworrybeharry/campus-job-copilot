@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "秋招作战台助手",
+  "version": "1.0.0",
+  "description": "在招聘网站一键抓取岗位 JD 到秋招作战台，并按你的档案自动填写网申表单（提交由你本人确认）。",
+  "action": { "default_popup": "popup.html", "default_title": "秋招作战台助手" },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "content_scripts": [{
+    "matches": ["file:///*", "https://*.github.io/*", "http://localhost/*", "http://127.0.0.1/*"],
+    "js": ["bridge.js"],
+    "run_at": "document_idle"
+  }]
+}
